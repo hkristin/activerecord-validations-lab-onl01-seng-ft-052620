@@ -9,7 +9,7 @@ class Post < ActiveRecord::Base
       clickbaity_words = ["Won't Believe", "Secret", "Top [number]", "Guess"]
 
       if clickbaity_words.include?(self.title)
-        false
+        errors.add(:clickbaity_title, "can't be a clickbaity title")
       else
         true
       end
