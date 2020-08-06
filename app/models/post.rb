@@ -7,7 +7,7 @@ class Post < ActiveRecord::Base
     def not_clickbaity_title
       clickbaity_words = ["Won't Believe", "Secret", "Top [number]", "Guess"]
       if clickbaity_words.include?(Post.title)
-        errors.add(:clickbaity_title, "can't be a clickbait-y title")
+        errors.add(:clickbaity_title, "can't be a clickbaity title")
       end
     end
 end
