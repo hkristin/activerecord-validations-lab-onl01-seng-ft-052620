@@ -6,10 +6,7 @@ class Post < ActiveRecord::Base
   validate :non_clickbaity_title
 
     def non_clickbaity_title
-      clickbaity_words = [/Won't Believe/i,
-    /Secret/i,
-    /Top [0-9]*/i,
-    /Guess/i]
+      clickbaity_words = [/Won't Believe/i, /Secret/i, /Top [0-9]*/i, /Guess/i]
 
       if clickbaity_words.none? { |pat| pat.match title }
         errors.add(:title, "can't be a clickbaity title")
