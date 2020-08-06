@@ -9,7 +9,7 @@ class Post < ActiveRecord::Base
       clickbaity_words = ["Won't Believe", "Secret", "Top [number]", "Guess"]
 
       if clickbaity_words.none? { |pat| pat.match title }
-        errors.add(:clickbaity_title, "can't be a clickbaity title")
+        errors.add(:title, "can't be a clickbaity title")
       else
         true
       end
